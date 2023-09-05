@@ -1,0 +1,58 @@
+{
+  "consumes": [
+    "application/json"
+  ],
+  "produces": [
+    "application/json"
+  ],
+  "swagger": "2.0",
+  "info": {
+    "title": "REST API with go-swagger.",
+    "version": "1.0.0"
+  },
+  "basePath": "/",
+  "paths": {
+    "/api/v1/books": {
+      "get": {
+        "tags": [
+          "books"
+        ],
+        "operationId": "get_v1_books",
+        "responses": {
+          "200": {
+            "description": "GetBooksResponse",
+            "schema": {
+              "$ref": "#/definitions/GetBooksResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "GetBooksResponse": {
+      "type": "object",
+      "properties": {
+        "author-id": {
+          "type": "string",
+          "x-go-name": "AuthorId"
+        },
+        "id": {
+          "type": "string",
+          "x-go-name": "Id"
+        },
+        "number-of-pages": {
+          "type": "integer",
+          "format": "int64",
+          "x-go-name": "NumberOfPages"
+        },
+        "title": {
+          "type": "string",
+          "x-go-name": "Title"
+        }
+      },
+      "x-go-name": "Book",
+      "x-go-package": "golang-gin-rest-service/api"
+    }
+  }
+}
