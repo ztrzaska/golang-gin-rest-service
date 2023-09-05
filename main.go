@@ -1,4 +1,4 @@
-// Package REST API with go-swagger
+// Package classification REST API with go-swagger.
 //
 //	BasePath: /
 //	Version: 1.0.0
