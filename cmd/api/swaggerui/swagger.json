@@ -57,7 +57,7 @@
         "tags": [
           "books"
         ],
-        "operationId": "get_v1_books",
+        "operationId": "get_v1_books_book_id",
         "parameters": [
           {
             "name": "bookId",

@@ -7,7 +7,7 @@ import (
 	"net/http"
 )
 
-// swagger:route GET /api/v1/books/{bookId} books get_v1_books
+// swagger:route GET /api/v1/books/{bookId} books get_v1_books_book_id
 //
 //	Parameters:
 //	  + name: bookId
