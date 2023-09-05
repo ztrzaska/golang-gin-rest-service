@@ -27,9 +27,3 @@ For further reference, please consider the following sections:
 * [Golang documentation](https://go.dev/doc/)
 * [Gin library documentation](https://gin-gonic.com/)
 * [Go-swagger](https://github.com/go-swagger/go-swagger/)
-
-### Guides
-
-The following guides illustrate how to use some features concretely:
-
-* [Accessing Data with MongoDB](https://spring.io/guides/gs/accessing-data-mongodb/)
