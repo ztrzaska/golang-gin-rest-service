@@ -7,8 +7,11 @@ import (
 	"net/http"
 )
 
-// swagger:route GET /api/v1/books/:id books get_v1_books
+// swagger:route GET /api/v1/books/{bookId} books get_v1_books
 //
+//	Parameters:
+//	  + name: bookId
+//	    in: path
 //	Responses:
 //	  200:
 func GetBookById(c *gin.Context) {
