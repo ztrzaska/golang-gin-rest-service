@@ -19,7 +19,7 @@ RUN GOSUMDB=off CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go install github.com/go-s
 RUN $GOPATH/bin/swagger generate spec -o ./cmd/api/swaggerui/swagger.json --scan-models
 
 # Build application
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -p 1 -o /golangginrestservice main.go
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -p 1 -o /golangginrestservice cmd/api/server.go
 
 # Run Stage
 #FROM scratch
