@@ -16,7 +16,7 @@ COPY . .
 RUN git config --global http.sslVerify "false"
 
 RUN GOSUMDB=off CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go install github.com/go-swagger/go-swagger/cmd/swagger@v0.30.5
-RUN $GOPATH/bin/swagger generate spec -o ./web/swagger/swagger.json --scan-models
+RUN $GOPATH/bin/swagger generate spec -o ./cmd/api/swaggerui/swagger.json --scan-models
 
 # Build application
 RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -p 1 -o /golangginrestservice main.go
