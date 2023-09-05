@@ -39,12 +39,12 @@
         }
       }
     },
-    "/api/v1/books/:id": {
+    "/api/v1/books/details": {
       "get": {
         "tags": [
           "books"
         ],
-        "operationId": "get_v1_books",
+        "operationId": "get_v1_books_details",
         "responses": {
           "200": {
             "description": ""
@@ -52,12 +52,18 @@
         }
       }
     },
-    "/api/v1/books/details": {
+    "/api/v1/books/{bookId}": {
       "get": {
         "tags": [
           "books"
         ],
-        "operationId": "get_v1_books_details",
+        "operationId": "get_v1_books",
+        "parameters": [
+          {
+            "name": "bookId",
+            "in": "path"
+          }
+        ],
         "responses": {
           "200": {
             "description": ""
