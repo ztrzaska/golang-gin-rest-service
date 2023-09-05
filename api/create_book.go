@@ -6,7 +6,7 @@ import (
 )
 
 func CreateBook(c *gin.Context) {
-	var book book
+	var book Book
 	if err := c.BindJSON(&book); err != nil {
 		return
 	}

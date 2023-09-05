@@ -1,3 +1,14 @@
+// Package REST API with go-swagger
+//
+//	BasePath: /
+//	Version: 1.0.0
+//	Consumes:
+//	- application/json
+//
+//	Produces:
+//	- application/json
+//
+// swagger:meta
 package main
 
 import (
@@ -12,11 +23,11 @@ func main() {
 
 func createRouter() *gin.Engine {
 	router := gin.Default()
-	router.GET("/books", api.GetBooks)
-	router.GET("/books/details", api.GetBookByQueryId)
-	router.GET("/books/:id", api.GetBookById)
+	router.GET("/api/v1/books", api.GetBooks)
+	router.GET("/api/v1/books/details", api.GetBookByQueryId)
+	router.GET("/api/v1/books/:id", api.GetBookById)
 
-	router.POST("/books", api.CreateBook)
+	router.POST("/api/v1/books", api.CreateBook)
 
 	return router
 }
