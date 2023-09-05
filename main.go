@@ -29,5 +29,6 @@ func createRouter() *gin.Engine {
 
 	router.POST("/api/v1/books", api.CreateBook)
 
+	router.Static("/web/swagger/", "/swagger")
 	return router
 }
