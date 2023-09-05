@@ -26,6 +26,43 @@
             }
           }
         }
+      },
+      "post": {
+        "tags": [
+          "books"
+        ],
+        "operationId": "post_v1_books",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/v1/books/:id": {
+      "get": {
+        "tags": [
+          "books"
+        ],
+        "operationId": "get_v1_books",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/api/v1/books/details": {
+      "get": {
+        "tags": [
+          "books"
+        ],
+        "operationId": "get_v1_books_details",
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        }
       }
     }
   },
@@ -52,7 +89,7 @@
         }
       },
       "x-go-name": "Book",
-      "x-go-package": "golang-gin-rest-service/api"
+      "x-go-package": "golang-gin-rest-service/cmd/api/request"
     }
   }
 }

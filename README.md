@@ -16,7 +16,7 @@ go install ./cmd/swagger
 ### Swagger doc API generation
 
 ```
-swagger generate spec -o ./swagger/swagger.json --scan-models
+swagger generate spec -o ./cmd/api/swaggerui/swagger.json --scan-models
 ```
 
 
