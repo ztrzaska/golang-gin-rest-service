@@ -13,7 +13,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"golang-gin-rest-service/api"
+	api "golang-gin-rest-service/cmd/api/request"
 )
 
 func main() {
@@ -29,6 +29,6 @@ func createRouter() *gin.Engine {
 
 	router.POST("/api/v1/books", api.CreateBook)
 
-	router.Static("/swagger/", "/web/swagger/")
+	router.Static("/swaggerui/", "cmd/api/swaggerui")
 	return router
 }
