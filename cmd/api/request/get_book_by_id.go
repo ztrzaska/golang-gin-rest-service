@@ -7,6 +7,10 @@ import (
 	"net/http"
 )
 
+// swagger:route GET /api/v1/books/:id books get_v1_books
+//
+//	Responses:
+//	  200:
 func GetBookById(c *gin.Context) {
 	id := c.Param("id")
 
@@ -19,6 +23,10 @@ func GetBookById(c *gin.Context) {
 	c.IndentedJSON(http.StatusOK, book)
 }
 
+// swagger:route GET /api/v1/books/details books get_v1_books_details
+//
+//	Responses:
+//	  200:
 func GetBookByQueryId(c *gin.Context) {
 	id, ok := c.GetQuery("id")
 
