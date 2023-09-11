@@ -52,5 +52,5 @@ func findBookById(id string) (*Book, error) {
 			return &book, nil
 		}
 	}
-	return nil, errors.New("Book not found")
+	return nil, errors.New("book not found")
 }
