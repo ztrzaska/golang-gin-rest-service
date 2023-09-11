@@ -1,4 +1,4 @@
-# Goolang gin REST API with go-swagger
+# Goolang gin REST API with go-swagger and mongo database
 
 ### Get started
 
@@ -19,6 +19,12 @@ go install ./cmd/swagger
 swagger generate spec -o ./cmd/api/swaggerui/swagger.json --scan-models
 ```
 
+### Mongo database
+
+```
+docker pull mongo
+docker run -dp 27017:27017 mongo
+```
 
 ### Reference Documentation
 
