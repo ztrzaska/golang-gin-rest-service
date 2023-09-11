@@ -1,7 +1,10 @@
 package api
 
 import (
+	"context"
 	"github.com/gin-gonic/gin"
+	"golang-gin-rest-service/cmd/mongo"
+	"log"
 	"net/http"
 )
 
@@ -15,6 +18,12 @@ func CreateBook(c *gin.Context) {
 		return
 	}
 
-	books = append(books, book)
+	_, err := mongo.Database.Collection(mongo.BooksCollection).InsertOne(context.Background(), book)
+	if err != nil {
+		log.Println("error inserting new book", err)
+		c.IndentedJSON(http.StatusInternalServerError, gin.H{"message": "database error"})
+		return
+	}
+
 	c.IndentedJSON(http.StatusCreated, book)
 }

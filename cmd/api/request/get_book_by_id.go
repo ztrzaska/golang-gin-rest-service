@@ -1,8 +1,11 @@
 package api
 
 import (
-	"errors"
+	"context"
 	"github.com/gin-gonic/gin"
+	"go.mongodb.org/mongo-driver/bson"
+	mongodb "go.mongodb.org/mongo-driver/mongo"
+	"golang-gin-rest-service/cmd/mongo"
 	"log"
 	"net/http"
 )
@@ -40,6 +43,7 @@ func GetBookByQueryId(c *gin.Context) {
 
 	book, err := findBookById(id)
 	if err != nil {
+		c.IndentedJSON(http.StatusInternalServerError, gin.H{"message": "database error"})
 		return
 	}
 
@@ -47,10 +51,18 @@ func GetBookByQueryId(c *gin.Context) {
 }
 
 func findBookById(id string) (*Book, error) {
-	for _, book := range books {
-		if id == book.Id {
-			return &book, nil
+	var book *Book
+	err := mongo.Database.Collection(mongo.BooksCollection).
+		FindOne(context.Background(), bson.M{"id": id}).Decode(&book)
+
+	if err != nil {
+		if err == mongodb.ErrNoDocuments {
+			return nil, nil
+
 		}
+		log.Println("cannot fetch books", err)
+		return nil, err
 	}
-	return nil, errors.New("book not found")
+
+	return book, nil
 }
